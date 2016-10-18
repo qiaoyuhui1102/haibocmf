@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title>直播半屏——聊天</title>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<!--media="all and (orientation:landscape)"-->
+		<!--<link rel="stylesheet" href="../css/public.css" type="text/css" media="all and (orientation:portrait)"/>-->
+	</head>
+	<body>
+		<canvas id="myCanvas" width="500px" height="500px"></canvas>
+	</body>
+		<script type="text/javascript">
+		window.onload = function() {
+			document.getElementById('myCanvas').width = window.innerWidth;
+			var canvas=document.getElementById("myCanvas");
+			var ctx=canvas.getContext('2d');
+			//弹幕列表
+			ctx.Danmaku = [
+			];
+			ctx.font = '40px Arial';
+			ctx.strokeStyle = 'black';
+			//弹幕push
+			ctx.addDanmaku = function(obj){
+				var x = canvas.width;
+				var maxY = canvas.height;
+				var y = Math.random()*maxY;
+
+				ctx.Danmaku.push({
+					id: obj.id,
+					txt: obj.str,
+					time: obj.time,
+					x: x,
+					y: y,
+					color: '#fff'
+				});
+				ctx.Danmaku.length == 0 ? start() : false;
+			}
+			//弹幕绘制
+			ctx.start = setInterval(function() {
+				ctx.clearRect(0,0,canvas.width, canvas.height);
+				for(var i = 0;i < ctx.Danmaku.length; i++){
+					ctx.font = '24px Arial';
+					ctx.fillStyle = ctx.Danmaku[i].color;
+					ctx.fillText(ctx.Danmaku[i].txt,ctx.Danmaku[i].x,ctx.Danmaku[i].y);
+					// ctx.font = '16px Arial';
+    				ctx.strokeText(ctx.Danmaku[i].txt,ctx.Danmaku[i].x,ctx.Danmaku[i].y);
+    				ctx.Danmaku[i].x -= 1;
+    				if(ctx.Danmaku[i].x < - ctx.Danmaku[i].txt.length * 40){
+    					ctx.Danmaku.splice(i,1);
+    				}
+				}
+			},20);
+
+
+
+			//弹幕管理
+			window.DanmakuManager = {};
+			//增加弹幕
+			DanmakuManager.addDanmaku = function(obj){
+				ctx.addDanmaku(obj);
+			}
+			//删除弹幕
+			DanmakuManager.removeDanmaku = function(obj) {
+				for(var i = 0;i < ctx.Danmaku.length ; i++){
+					if(ctx.Danmaku[i].id == obj.id && ctx.Danmaku[i].time == obj.time){
+						ctx.Danmaku.splice(i,1);
+						break;
+					}
+				}
+			}
+		}
+			
+		</script>
+	</html>

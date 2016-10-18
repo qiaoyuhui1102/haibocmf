@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的账单</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+	<script>
+		window.onload = function() {
+			//我的账单{tab记录}
+			var str = document.getElementById('tab');
+			var str2 = document.getElementById('bill_tab')
+			var oBtn = str2.getElementsByTagName('li')
+			var oDiv = str.getElementsByClassName('bill_con');
+			for(var i = 0; i < oBtn.length; i++) {
+				oBtn[i].index = i;
+				oBtn[i].onclick = function() {
+					for(var i = 0; i < oBtn.length; i++) {
+						oBtn[i].className = '';
+						oDiv[i].style.display = 'none';
+					}
+					this.className = 'bill_name';
+					oDiv[this.index].style.display = 'block';
+				}
+			}
+		}
+	</script>
+
+	<body style="background-color: #EEEEEE;">
+		<header class="mui-bar mui-bar-nav header-bar">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<h1 class="mui-title" style="color: #FFFFFF;">我的账单</h1>
+		</header>
+		<div class="mui-content center">
+			<div id="tab" style="padding-top: 44px;margin-top: -44px;">
+				<div class="bill_nav" id="bill_tab">
+					<ul>
+						<li class="bill_tab_name bill_name">打赏记录<span class="bill_line"></span></li>
+
+						<li class="bill_tab_name">砸砖记录<span class="bill_line"></span></li>
+
+						<li class="bill_tab_name">购买记录</li>
+					</ul>
+				</div>
+				<div class="bill_con bill_con_bar1">
+					<p class="bill_bj"></p>
+					<div class="bill_zongzhi">
+						<ul class="m_c">
+							<li><img src="../img/39@2x.png" class="bill_zz_img" /></li>
+							<li style="margin-left: 10px;">总值￥8068.00</li>
+						</ul>
+					</div>
+					<p class="bill_bj2 m_c">
+						<span>本月</span>
+						<span style="float: right;">共 ￥370.00</span>
+					</p>
+					<div class="bill_sj">
+						<ul>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-07-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-07-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-07-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-07-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-07-12</span>
+							</li>
+						</ul>
+					</div>
+					<p class="bill_bj2 m_c">
+						<span>6月</span>
+						<span style="float: right;">共 ￥370.00</span>
+					</p>
+					<div class="bill_sj">
+						<ul>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--two-->
+				<div class="bill_con bill_con_bar1" style="display: none;">
+					<p class="bill_bj"></p>
+					<div class="bill_zongzhi">
+						<ul class="m_c">
+							<li><img src="../img/39@2x.png" class="bill_zz_img" /></li>
+							<li style="margin-left: 10px;">总值￥370.00</li>
+						</ul>
+					</div>
+					<p class="bill_bj2 m_c">
+						<span>本月</span>
+						<span style="float: right;">共 ￥170.00</span>
+					</p>
+					<div class="bill_sj">
+						<ul>
+							<li>
+								<span class="bill_money">￥20.00</span>
+								<span class="bill_date">2016-07-16</span>
+							</li>
+							<li>
+								<span class="bill_money">￥20.00</span>
+								<span class="bill_date">2016-07-16</span>
+							</li>
+							<li>
+								<span class="bill_money">￥20.00</span>
+								<span class="bill_date">2016-07-16</span>
+							</li>
+							<li>
+								<span class="bill_money">￥20.00</span>
+								<span class="bill_date">2016-07-16</span>
+							</li>
+							<li>
+								<span class="bill_money">￥20.00</span>
+								<span class="bill_date">2016-07-16</span>
+							</li>
+						</ul>
+					</div>
+					<p class="bill_bj2 m_c">
+						<span>6月</span>
+						<span style="float: right;">共 ￥370.00</span>
+					</p>
+					<div class="bill_sj">
+						<ul>
+							<li>
+								<span class="bill_money">￥10.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥10.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥10.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥10.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+							<li>
+								<span class="bill_money">￥30.00</span>
+								<span class="bill_date">2016-06-12</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--three-->
+				<div class="bill_con bill_con_bar1" style="display: none;">
+					<p class="bill_bj"></p>
+					<div class="bill_zongzhi">
+						<ul class="m_c">
+							<li><img src="../img/39@2x.png" class="bill_zz_img" /></li>
+							<li style="margin-left: 10px;">总值￥458.00</li>
+						</ul>
+					</div>
+					<div class="watch_list bill_threen_bj">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买&nbsp;&nbsp;<b style="color: #e23f75;">8月31日08：30直播</b></span>
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">2分钟前</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list bill_threen_bj">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买&nbsp;&nbsp;<b style="color: #e23f75;">直播中</b></span>
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">昨天</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买</span>
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+					<div class="watch_list">
+						<table class="watch_table m_c">
+							<tr>
+								<td class="watch_l" style="width: 45px;"><img src="../img/tou2@2x.png" class="watch_img2" /></td>
+								<td class="watch_l" style="position: relative;left: 5px;">
+									<span style="font-size: 15px;line-height: 30px;">中国好声音总决赛</span>
+									<span style="color: #909390;line-height: 30px;">￥31.00已购买
+								</td>
+								<td class="watch_center"><span style="color: #9d9f9f; position: relative;top: -15px;">8月26日</span></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--空状态-->
+		<div class="record_kong" style=" display: none;">
+			<ul>
+				<li><img src="../img/kong@2x.png" width="164px" height="145px" /></li>
+				<li>您还没有任何打赏</li>
+			</ul>
+		</div>
+		<script>
+			$('.head_left_icon').click(function(){
+				window.history.back()
+			});
+		</script>
+	</body>
+</html>

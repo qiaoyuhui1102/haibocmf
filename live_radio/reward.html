@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>打赏</title>
+		<!--<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />-->
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<h1 class="mui-title">打赏</h1>
+		</header>
+		<div class="mui-content" style="background-color: #FFFFFF;width: 100%;">
+			<div class="reward_border">
+				<ul class="reward_circle">
+					<img src="../img/40@2x.png" width="49px" height="42px"/>
+				</ul>				
+			</div>
+			<div class="reward_con">
+				<table class="reword_table">
+					<tr>
+						<td><input type="button" value="￥1.00"/></td>
+						<td><input type="button" value="￥3.00"/></td>
+						<td><input type="button" value="￥5.00"/></td>
+					</tr>
+					<tr>
+						<td><input type="button" value="￥10.00"/></td>
+						<td><input type="button" value="￥30.00"/></td>
+						<td><input type="button" value="￥50.00"/></td>
+					</tr>
+				</table>
+				<div class="reward_money">
+					<ul>
+						<li>其他金额&nbsp;<input type="tel" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " class="reward_text" onclick="inputKuang2()"/>&nbsp;元</li>
+					</ul>
+				</div>
+				<div class="reward_div_btn"><input type="button" value="立即打赏" class="reward_btn"/></div>
+			</div>
+		</div>
+	</body>
+<script>
+	$('.reword_table input').click(function() {
+		var str = $(this).val();
+		var reg = /[0-9.]*/g;
+		var num = parseInt(str.match(reg)[1]);
+		$('.reward_text').val(num);
+		/*console.log(num);*/
+	})
+</script>
+</html>

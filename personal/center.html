@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>个人中心</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/personal/center.js"></script>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body>
+		<div class="cc_top">
+			<header style="position: fixed; top: 0;left: 15px; right: 15px;">
+				<a class="mui-pull-left mui-action-back">
+					<img src="../img/1@2x.png" class="head_left_icon" />
+				</a>
+				<a class="mui-pull-right" id="set">
+					<img src="../img/28@2x.png" class="head_right_icon right-set" style="width: 20px; height: 19px;" />
+				</a>
+				<h1 class="mui-title" style="color: #FFFFFF;">个人中心</h1>
+			</header>
+			<div class="center_top">
+				<img src="../img/bk@2x.png" />
+				<div class="center_top_bj"></div>
+			</div>
+		</div>
+		<div class="center_txcon">
+			<div class="center_border">
+				<div class="center_touxiang"><img src="../img/tou@2x.png" width="100px" height="100px" /></div>
+				<div class="center_name">
+					<ul>
+						<li class="cen_name">abigail</li>
+						<li class="center_menimg"><img src="../img/women@2x.png" width="9px" height="10px" /></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="center_con">
+			<table class="center_table" style="border-collapse: collapse;">
+				<tr>
+					<td style="border-top:none; border-left: none;" id="watch_record">
+						<img src="../img/29@2x.png" width="33px" height="33px" />
+						<span>观看历史</span>
+					</td>
+					<td style="border-top:none;border-right: none;" id="account">
+						<img src="../img/30@2x.png" width="32px" height="28px" />
+						<span>我的账户</span>
+					</td>
+				</tr>
+				<tr>
+					<td style="border-bottom:none;border-left: none;" id="shake">
+						<img src="../img/31@2x.png" width="36px" height="34px" />
+						<span>摇一摇抽奖</span>
+					</td>
+					<td style="border-bottom:none;border-right: none;" id="tanmu">
+						<img src="../img/32@2x.png" width="36px" height="34px" />
+						<span>弹幕上墙</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<script>
+			$('.head_left_icon').click(function(){
+				window.history.back()
+			});
+		</script>
+	</body>
+
+</html>

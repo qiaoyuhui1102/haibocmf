@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>直播——列表</title>
+		<!--<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/live_radio/live_list.js"></script>
+		<!--<script type="text/javascript" src="../js/live_radio/pullrefresh.js"></script>-->
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<a class="mui-pull-right" id="l_center">
+				<img src="../img/2@2x.png" class="head_right_icon fright" />
+			</a>
+			<h1 class="mui-title">直播列表</h1>
+		</header>
+	<!--id="pullrefresh"  mui-scroll-wrapper-->
+		<div class="mui-content "  style="background-color: #FFFFFF; height: auto;">
+			<div class="" >
+				<!--预告-->
+				<div class="live_img" id="pay">
+					<div class="live_list_img">
+						<img src="../img/1-1@2x.png" class="l_l_img"  id="live_b_money"/>
+					</div>
+					<ul class="live_left_ul m_c">
+						<li class="live_shop">
+							<span class="ls_icon"><img src="../img/3@2x.png"/></span>
+							<span class="ls_number">768</span>
+						</li>
+					</ul>
+					<ul class="live_left_ul m_c">
+						<li class="live_yugao">
+							<span class="live_l_ul_yg">预告：8月31日08：30</span>
+						</li>
+					</ul>
+					<ul class="live_bottom_ul">
+						<li class="live_b_title">天生歌姬Alin星赛歌专场</li>
+						<li class="live_b_money">￥12.00</li>
+					</ul>
+				</div>
+				<div class="live_img" id="full-live">
+					<div class="live_list_img">
+						<img src="../img/1-1@2x.png" class="l_l_img" id="l_foreshow"/>
+					</div>
+					<ul class="live_left_ul m_c">
+						<li class="live_shop">
+							<span class="ls_icon"><img src="../img/3@2x.png"/></span>
+							<span class="ls_number">768</span>
+						</li>
+					</ul>
+					<ul class="live_left_ul m_c">
+						<li class="live_yugao">
+							<span class="live_l_ul_yg">预告：8月31日08：30</span>
+						</li>
+					</ul>
+					<ul class="live_bottom_ul">
+						<li class="live_b_title">天生歌姬Alin星赛歌专场</li>
+						<li class="live_b_money" >免费</li>
+					</ul>
+				</div>
+				<!--直播-->
+				<div class="live_img" id="chat-test">
+					<div class="live_list_img2">
+						<img src="../img/1-2@2x.png" class="l_l_img" id="l_chat" />
+					</div>
+					<ul class="live_left_ul m_c">
+						<li class="live_shop2">
+							<span class="ls_icon"><img src="../img/9-1@2x.png"/></span>
+							<span class="ls_number">7868</span>
+						</li>
+					</ul>
+					<ul class="live_left_ul m_c">
+						<li class="live_yugao2">
+							<span class="live_l_ul_yg">直播</span>
+						</li>
+					</ul>
+					<ul class="live_bottom_ul" style="bottom: 3px;">
+						<li class="live_b_title">抒情歌手micke巡回演唱</li>
+						<li class="live_b_money">￥16.00</li>
+					</ul>
+				</div>
+				<div class="live_img">
+					<div class="live_list_img2">
+						<img src="../img/1-2@2x.png" class="l_l_img" />
+					</div>
+					<ul class="live_left_ul m_c">
+						<li class="live_shop2">
+							<span class="ls_icon"><img src="../img/9-1@2x.png"/></span>
+							<span class="ls_number">7868</span>
+						</li>
+					</ul>
+					<ul class="live_left_ul m_c">
+						<li class="live_yugao2">
+							<span class="live_l_ul_yg">直播</span>
+						</li>
+					</ul>
+					<ul class="live_bottom_ul" style="bottom: 3px;">
+						<li class="live_b_title">抒情歌手micke巡回演唱</li>
+						<li class="live_b_money">免费</li>
+					</ul>
+				</div>
+			
+			</div>
+		</div>
+		<!--弹出购买-->
+		<div class="model" id="model">
+			<div class="page_opacity"></div>
+			<div class="model_con">
+				<ul>
+					<li class="model_title">抒情歌手micke巡回演唱</li>
+					<li class="model_zhifu">支付￥38.00立即观看</li>
+					<li class="model_btn">
+						<input type="button" value="取消" class="model_cancel" id="model_cancel" />
+						<input type="button" value="支付" class="model_pay" />
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

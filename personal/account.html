@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的账户</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/personal/account.js"></script>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body style="background-color: #EEEEEE;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<a class="mui-pull-right" style="color: #FFFFFF; line-height: 44px;" id="my_bill">
+				<img src="../img/33@2x.png" class="head_right_icon right-list" />
+			</a>
+			<h1 class="mui-title" style="color: #FFFFFF;">我的账户</h1>
+		</header>
+		<div class="mui-content" style="background-color: #FFFFFF;">
+			<div class="account_bj" >
+				<div class="account_yuan">
+					<div class="account_circle">
+						<div class="account_shiy">
+							<img src="../img/35@2x.png" width="49px" height="42px" />
+						</div>
+					</div>
+				</div>
+				<div class="account_ze">
+					<ul>
+						<li class="account_line"></li>
+						<li class="account_gxze">贡献总额</li>
+						<li class="account_line"></li>
+					</ul>
+				</div>
+				<p class="account_money">￥
+					<sapn style="font-size: 30px;">8068.00</sapn>
+				</p>
+				<div class="account_th">
+					<ul>
+						<li><img src="../img/34@2x.png" width="20px" height="15px" class="account_thimg" /></li>
+						<li>土豪</li>
+					</ul>
+				</div>
+			</div>
+			<div class="account_con">
+				<p class="account_qjll" id="divId" style="top:44px;">获奖记录</p>
+				<div class="account_info m_c" id="get_prize">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+				<div class="account_info m_c">
+					<ul>
+						<li class="account_jl_bj">
+							<img src="../img/jiang2@2x.png" class="account_lw" />
+						</li>
+						<li class="account_ych">
+							<span class="account_athror">陈奕迅演唱会</span>
+							<span class="account_jnp">演唱会纪念品</span>
+						</li>
+						<li class="account_date">
+							<span>2016-07-11</span>
+						</li>
+					</ul>
+				</div>
+				<p class="account_line_bj"></p>
+			</div>
+		</div>
+		<script>
+			$('.head_left_icon').click(function(){
+				window.history.back()
+			});
+		</script>
+		<!--空状态-->
+		<div class="record_kong" style="margin-top: 50px; display: none;">
+			<ul>
+				<li><img src="../img/kong@2x.png" width="164px" height="145px" /></li>
+				<li>您还没有获过奖哦</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

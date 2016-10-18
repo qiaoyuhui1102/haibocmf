@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>点播列表</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />-->
+		<!--<script src="../js/mui.min.js"></script>-->
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/streaming/stream_list.js"></script>
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body style="background-color: #eeeeee;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<a class="mui-pull-right right-icon-person" id="center">
+				<img src="../img/2@2x.png" class="head_right_icon" />
+			</a>
+			<!--<div class="mui-title title-middle" id="remen_title">热门 <img src="../img/18@2x.png" class="remen_sj" id="xia_sj"/></div>-->
+			<h1 class="mui-title title-middle" id="remen_title">热门 <img src="../img/18@2x.png" class="remen_sj" id="xia_sj"/></h1>
+		</header>
+
+		<!--<script>
+
+
+
+		</script>-->
+		<!--菜单-->
+		<div class="stream_menu" id="stream_menu" style="display: none;">
+			<table class="stream_table">
+				<tr id="hit">
+					<td class="s_t_icon"><img src="../img/19@2x.png" class="s_menu_icon" /></td>
+					<td class="s_t_title">热门</td>
+				</tr>
+				<tr>
+					<td class="s_t_icon"><img src="../img/20@2x.png" class="s_menu_icon" /></td>
+					<td class="s_t_title">校园</td>
+				</tr>
+				<tr>
+					<td class="s_t_icon"><img src="../img/21@2x.png" class="s_menu_icon" /></td>
+					<td class="s_t_title">榜单</td>
+				</tr>
+				<tr>
+					<td class="s_t_icon"><img src="../img/22@2x.png" class="s_menu_icon" /></td>
+					<td class="s_t_title">现场</td>
+				</tr>
+				<tr>
+					<td class="s_t_icon"><img src="../img/23@2x.png" class="s_menu_icon" /></td>
+					<td class="s_t_title">访谈</td>
+				</tr>
+			</table>
+			<div class="st_menu_sj">
+				<img src="../img/17@2x.png" class="s_menu_sj" />
+			</div>
+		</div>
+		<div class="mui-content">
+			<div class="stream_con m_c">
+				<div class="stream_left stream_lr">
+					<div class="stream_img">
+						<img src="../img/01@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手</li>
+							</ul>
+						</div>
+						<p class="stream_money">￥3.20</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_right stream_lr">
+					<div class="stream_img">
+						<img src="../img/02@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>jack北京鸟巢演唱会</li>
+							</ul>
+						</div>
+						<p class="stream_money">免费</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_left stream_lr">
+					<div class="stream_img">
+						<img src="../img/03@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手总决赛现场</li>
+							</ul>
+						</div>
+						<p class="stream_money">免费</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_right stream_lr">
+					<div class="stream_img">
+						<img src="../img/04@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手</li>
+							</ul>
+						</div>
+						<p class="stream_money">￥3.20</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_left stream_lr">
+					<div class="stream_img">
+						<img src="../img/05@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手总决赛现场</li>
+							</ul>
+						</div>
+						<p class="stream_money">免费</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_right stream_lr">
+					<div class="stream_img">
+						<img src="../img/06@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手</li>
+							</ul>
+						</div>
+						<p class="stream_money">￥3.20</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_left stream_lr">
+					<div class="stream_img">
+						<img src="../img/01@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>我是歌手</li>
+							</ul>
+						</div>
+						<p class="stream_money">￥3.20</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+				<div class="stream_right stream_lr">
+					<div class="stream_img">
+						<img src="../img/02@2x.png" class="stream_lr_img" />
+						<div class="stream_bj">
+							<ul>
+								<li>jack北京鸟巢演唱会</li>
+							</ul>
+						</div>
+						<p class="stream_money">免费</p>
+						<p class="stream_player"><img src="../img/4@2x.png" class="player_icon" />
+							<span class="s_player_n">8868</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

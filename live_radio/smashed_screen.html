@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>横屏——砸砖</title>
+		<!--<script src="../js/mui.min.js"></script>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />-->
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<h1 class="mui-title">砸砖</h1>
+		</header>
+		<div class="mui-content" style="background-color: #FFFFFF;width: 100%;">
+			<div class="smashed_screen rcr_h  reword_screen_left">
+				<div class="bricks_con">
+					<div class="reward_border bricks">
+						<ul class="reward_circle">
+							<img src="../img/41@2x.png" width="49px" height="42px" />
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="smashed_con2 rcr_h reword_screen_right">
+				<table class="smashed_table">
+					<tr>
+						<td>
+							<a>
+								<span class="sb_kuan">1块</span>
+								<span class="sb_money">￥1.00</span>
+							</a>
+						</td>
+						<td>
+							<a>
+								<span class="sb_kuan">3块</span>
+								<span class="sb_money">￥3.00</span>
+							</a>
+						</td>
+						<td>
+							<a>
+								<span class="sb_kuan">5块</span>
+								<span class="sb_money">￥5.00</span>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a>
+								<span class="sb_kuan">10块</span>
+								<span class="sb_money">￥10.00</span>
+							</a>
+						</td>
+						<td>
+							<a>
+								<span class="sb_kuan">30块</span>
+								<span class="sb_money">￥30.00</span>
+							</a>
+						</td>
+						<td>
+							<a>
+								<span class="sb_kuan">50块</span>
+								<span class="sb_money">￥50.00</span>
+							</a>
+						</td>
+					</tr>
+				</table>
+
+				<div class="reward_money">
+					<ul>
+						<li>其他数量&nbsp;
+							<span class="reward_jj" id="del">－</span>
+							<input type="tel" class="reward_text" style="width:70px;" />
+							<span class="reward_jj" id="add">＋</span> &nbsp;￥1.00/块
+						</li>
+					</ul>
+				</div>
+				<div class="reward_div_btn2"><input type="button" value="立即砸砖" class="reward_btn" /></div>
+			</div>
+		</div>
+	</body>
+	<script>
+		/*正则匹配数字*/
+		$('.smashed_table td').click(function() {
+			var str = $(this).find('.sb_kuan').text();
+			/*console.log($(this).find('.sb_kuan').text());*/
+			var reg = /[0-9.]*/g;
+			var num = parseInt(str.match(reg)[0]);
+			$('.reward_text').val(num);
+			/*console.log(num);*/
+		})
+
+
+		/*实现数量增加减*/
+		$('#add').click(function(){
+			if($('.reward_text').val() == ''){
+				$('.reward_text').val(0);
+			}
+			$('.reward_text').val(parseInt($('.reward_text').val()) + 1);
+		})
+
+		$('#del').click(function(){
+			if($('.reward_text').val() == ''){
+				$('.reward_text').val(0);
+			}
+			$('.reward_text').val(parseInt($('.reward_text').val()) - 1);
+
+			if(parseInt($('.reward_text').val()) < 0){
+				$('.reward_text').val(0);
+			}
+		})
+	</script>
+
+</html>
