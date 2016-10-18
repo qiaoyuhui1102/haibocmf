@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title>直播半屏——聊天</title>
+		
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="http://112.74.114.222:1337/socket.io/socket.io.js"></script>
+	</head>
+
+	<body style="background-color: #EFEFF4;">
+	<input type="hidden" name="live_one_data" />
+		<header id="live-content" style="position: fixed; top: 0px;left: 15px; right: 15px; z-index: -1;">
+			<script type="text/html" id="live-one">
+				<a class="mui-pull-left mui-action-back">
+					<img src="../img/1@2x.png" class="head_left_icon" />
+					<span class="countdown_title"><%=datas.live_name%></span>
+					<input type="hidden" name="live_id" value="<%=datas.id%>">
+				</a>
+				<a class="mui-pull-right" id="fenxiang_icon">
+					<img src="../img/5@2x.png" class="head_right_icon" />
+				</a>
+			</script>
+		</header>
+		<div class="countdown_top" style="z-index: 1;">
+			<div class="boxDom" id="boxDom">
+				<div class="idDom" id="idDom">
+					<div id="a1" style="z-index:999"></div>
+				</div>
+			</div>
+		</div>
+
+		<!--全屏按钮和人数-->
+		<div class="count_head_bottom">
+			<ul>
+				<li class="count_person_bj">
+					<span class="c_person_icon"><img src="../img/9-1@2x.png"/></span>
+					<span style="line-height: 20px;">&nbsp;7868</span>
+				</li>
+				<li class="count_qp_bj" id="c_full_screen_live">
+					<img src="../img/8@2x.png" class="quanbing_icon" />
+				</li>
+			</ul>
+		</div>
+		<!--砸砖-->
+		<div class="zazhuan">
+			<div class="zong"></div>
+			<div class="za_btn">
+				<button type="button" class="delZhuan" onclick="delZhuan()">移除</button>
+				<button type="button" class="addZhuan" onclick="addZhuan()">fix点击</button>
+			</div>
+		</div>
+
+		<div id="tab">
+			<div class="countdown_tab" id="countdown_tab">
+				<ul>
+					<li class="countdown_hover">聊天<span class="countdown_line"></span></li>
+					<li>排行</li>
+				</ul>
+			</div>
+			<div class="countdown_con ">
+				<div class="count_online">
+				</div>
+				<div class="count_bottom">
+					<ul class="m_c">
+						<li class="m_r"><img src="../img/6@2x.png" class="count_zan" id="c_smashed_bricks" /></li>
+						<li class="m_r"><img src="../img/7@2x.png" class="count_money" id="c_reward" /></li>
+						<li style="width: 60%;"><input type="text" placeholder="在这里输入聊天内容" class="input_text" onclick="inputKuang()" /></li>
+						<li class="count_send">发送</li>
+					</ul>
+				</div>
+				<!--点击输入框-->
+				<div class="cc_input" style="display:none;" id="cc_input">
+					<ul>
+						<li class="cc_sr_input">
+							<input type="text" placeholder="在这里输入聊天内容" name="cc_input_text" class="cc_input_text" />
+						</li>
+						<li class="cc_input_send" id="btn_send">
+							<a href="javascript:;" class="btn" id="btn">发送</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="countdown_con" style="display: none;">
+				<table class="countdown_table">
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai1@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1980.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai2@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1660.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai3@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1880.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">4</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥380.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">5</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥980.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">6</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥720.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">7</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥520.00</span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--分享-->
+		<div class="fenxiang" id="fenxiang" style="display: none;">
+			<div class="page_opacity2"></div>
+			<div class="fenxiang_con">分享</div>
+			<table class="fenxiang_table">
+				<tr>
+					<td>
+						<img src="../img/w@2x.png" />
+						<span>微信</span>
+					</td>
+					<td>
+						<img src="../img/q@2x.png" />
+						<span>朋友圈</span>
+					</td>
+					<td>
+						<img src="../img/qq@2x.png" />
+						<span>QQ</span>
+					</td>
+					<td>
+						<img src="../img/qk@2x.png" />
+						<span>QQ空间</span>
+					</td>
+					<td>
+						<img src="../img/wb@2x.png" />
+						<span>新浪微博</span>
+					</td>
+				</tr>
+			</table>
+			<div class="fenxiang_quxiao" id="fenxiang_cancel">
+				<a>取消</a>
+			</div>
+		</div>
+		<!--分享成功-->
+		<div class="fenxiang_success" style="display: none;">
+			<!--<div class="page_opacity2"></div>-->
+			<ul>
+				<li class="fx_s_img"><img src="../img/38@2x.png" /></li>
+				<li>分享成功</li>
+			</ul>
+		</div>
+		<!--分享失败-->
+		<div class="fenxiang_success" style="display: none;">
+			<!--<div class="page_opacity2"></div>-->
+			<ul>
+				<li class="fx_s_img"><img src="../img/38-1@2x.png" /></li>
+				<li>分享失败</li>
+			</ul>
+		</div>
+		<!--赏效果-->
+		<div class="shang_div" style="display: none;">
+			<div class="page_opacity2"></div>
+			<div class="shang_img">
+				<img src="../img/dashang@2x.png" />
+			</div>
+			<div class="shang_bj">
+				<div class="shang_person">
+					<ul style="position: absolute;">
+						<li class="shang_touxiang">
+							<img src="../img/tou2@2x.png" class="shang_tx" />
+						</li>
+						<li class="shang_name">JUCY</li>
+						<li class="shang_money">
+							<span class="sm_money">赏￥8.00</span>
+							<span>消8块砖</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--砸砖效果-->
+		<div class="shang_div" style="z-index:1000;display: none">
+			<div class="page_opacity2"></div>
+			<div class="shang_img2">
+				<img src="../img/zazhuan@2x.png" width="250px" height="214px" />
+			</div>
+			<div class="shang_bj">
+				<div class="shang_person">
+					<ul style="position: absolute;">
+						<li class="shang_touxiang" style="top: 8px;">
+							<img src="../img/tou2@2x.png" class="shang_tx" />
+						</li>
+						<li class="shang_name" style="top:-5px">JUCY</li>
+						<li class="shang_money">
+							<span class="zalezhuan">砸了砖</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="../js/config.js"></script>
+	<script language="javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="ckplayer/ckplayer.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/template-native.js"></script>
+	<script type="text/javascript" src="../js/live_radio/chat.js"></script>
+	<script>
+		$(function(){
+			var live_id;
+			live_id = getQueryString('live_id');
+			var phoneType = ismobile(1);
+			//判断如果是苹果手机横屏
+			if(phoneType == '0'){
+				window.addEventListener('orientationchange', function(event){
+					if ( window.orientation == 180 || window.orientation==0 ) {
+						location.reload();
+					}
+					if( window.orientation == 90 || window.orientation == -90 ) {
+						location.href = './full_screen_live.html';
+					}
+				});
+			}else if(phoneType == '1'){
+				//安卓机
+			}
+			$.ajax({
+				url:ApiUrl+"index.php?g=Api&m=Live&a=live_one",
+				type:'get',
+				jsonp:'callback',
+				data:{id:live_id},
+				dataType:'jsonp',
+				success:function(result){
+					if(result.datas.details != '' && result.datas.details != null){
+						var data_one = result.datas.details;
+						var html = template("live-one",result);
+						$("#live-content").html(html);
+						$("input[name='live_one_data']").val(data_one.data[0].url);
+						var flashvars={
+							f:'ckplayer/m3u8.swf',
+							s:4,
+							c:0,
+							p:1
+						};
+						var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+						var video=[];
+						video.push(data_one.data[0].url);
+						CKobject.embed('ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','200',false,flashvars,video,params);
+
+//						var video_html = "<video src='"+data_one.data[0].url+"' autoplay='autoplay' width='100%' height='200px'></video>";
+//						$("#a1").html(video_html);
+					}
+
+				}
+			});
+			var pageW=parseInt($(".boxDom").width());
+			var pageH=parseInt($(".boxDom").height());
+			var boxDom=$("#boxDom");
+			var btnDom=$("#btn");
+			var Top,Right;
+			var width;
+			width=pageW;
+			var colorArr=["#cfaf12","#12af01","#981234","#adefsa","#db6be4","#f5264c","#d34a74"];
+			btnDom.bind("click",auto());
+			document.onkeydown=function(e){
+				if(e.keyCode == 13){
+					auto();
+				}
+			}
+
+			var socket = io.connect("http://112.74.114.222:1337");
+			//房间以及用户信息
+			var user_message = {
+				'roomname':live_id,
+				'username':'yuzheng'
+			};
+			socket.emit('join',user_message);
+			//扔砖 减砖事件发送
+			$(".addZhuan").click(function(){
+				user_message.zhuan = 1;
+				socket.emit('addZhuan',user_message);
+			});
+			//消砖触发事件
+			$(".delZhuan").click(function(){
+				user_message.zhuan = 1;
+				socket.emit('delZhuan',user_message);
+			});
+			//扔砖 事件监听
+			socket.on('addZhuanUser',function(msg){
+				for(var n=1;n<=msg.zhuan;n++){
+					addZhuan();
+				}
+			});
+			//消砖监听事件
+			socket.on('delZhuanUser',function(msg){
+				for(var n=1;n<=msg.zhuan;n++){
+					delZhuan();
+				}
+			});
+			//链接socket实现一次握手双工模式
+			socket.on('danmu',function(msg){
+				var text = msg.msg;
+				var dateNow = getNowFormatDate();
+				var imHtml = "<div class='count_online_l'>"+
+							"<img src='../img/tou1-@2x.png' class='count_touxiang2' />"+
+							"<ul class='count_title2'>"+
+							"<li class='count_name_date2'>"+ msg.username +"&nbsp;<span style='color:#727171;'>"+ dateNow +"</span></li>"+
+							"<li class='count_text2'>"+ text +"</li>"+
+							"<div class='leftdirection'></div>"+
+							"</ul>"+
+							"</div>";
+				auto(text);
+				$(".count_online").append(imHtml);
+			});
+			$(".btn").click(function () {
+				//点播接口访问
+//				var i = 0;
+//				$.getJSON('server.php?mode=2',function (data) {
+//					$.each(data,function () {
+//						var t_time = this.time*1000;
+//						setTimeout(function () {
+//							console.log(i);
+//							auto(data[i].info);
+//							i++;
+//						},t_time);
+//					});
+//
+//				});
+				var text = $("input[name='cc_input_text']").val();
+				user_message.msg = text;
+				socket.emit('fa',user_message);
+				auto(text);
+				//直播接口
+				var dateNow = getNowFormatDate();
+				var imHtml = "<div class='count_online_r'>"+
+						"<img src='../img/tou2@2x.png' class='count_touxiang' />"+
+						"<ul class='count_title'>"+
+						"<li class='count_name_date'>"+
+						"<span style='color:#727171;'>"+dateNow+"</span>&nbsp;"+ user_message.username +
+						"</li>"+
+						"<li class='count_text'>"+ text +
+						"<div class='rightdirection'></div>"+
+						"</li>"+
+						"</ul>"+
+						"</div>";
+				$(".count_online").append(imHtml);
+				$(".s_txt").val('');
+				$("input[name='cc_input_text']").val('');
+			});
+			function auto(text){
+				var creSpan=$("<span class='string'></span>");
+				creSpan.text(text);
+				$("#text").val("");
+				Top=parseInt(pageH*(Math.random()));
+				var num=parseInt(colorArr.length*(Math.random()));
+				if(Top>pageH-90){
+					Top=pageH-90;
+				}
+				creSpan.css({"top":Top,"right":-300,"color":"#FFFFFF"});
+				boxDom.append(creSpan);
+				var spanDom=$("#boxDom>span:last-child");
+				spanDom.stop().animate({"right":pageW+300},10000,"linear",function(){
+					$(this).remove();
+				});
+			}
+			function getRandomColor(){
+				return '#' + (function(h){
+							return new Array(7 - h.length).join("0") + h
+						})((Math.random() * 0x1000000 << 0).toString(16));
+			}
+		});
+
+		//加砖
+		function addZhuan() {
+			$(".zong").append("<div class='zhuan' style='float: left;'><img src='../img/zhuan@2x.png' width='100%' height='14px'/></div>");
+		}
+		//减砖
+		function delZhuan() {
+			$(".zong").find(" .zhuan:last-child").remove();
+		}
+	</script>
+</html>

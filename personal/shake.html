@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>摇一摇</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body style="background-color: #EEEEEE;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<a class="mui-pull-right" style="color: #FFFFFF; line-height: 44px; font-size: 14px;float: right;" id="shake_account">
+				获奖记录
+			</a>
+			<h1 class="mui-title" style="color: #FFFFFF;">摇一摇抽奖</h1>
+		</header>
+		<div class="mui-content m_c">
+			<div class="shake_img hand-animate">
+				<img src="../img/yao@2x.png" width="260px" height="260px" />
+			</div>
+			<div class="shake_info">
+				<ul>
+					<li class="shake_btn result" id="result"></li>
+					<li class="shake_txt">
+						<a href="shake_list.html">所有奖品信息&gt;&gt;</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/personal/shake.js" ></script>
+		<script>
+			/*mui.init();*/
+			window.onload = function() {
+				var myShakeEvent = new Shake({
+					threshold: 15
+				});
+
+				myShakeEvent.start();
+
+				window.addEventListener('shake', shakeEventDidOccur, false);
+
+				function shakeEventDidOccur() {
+					var result = document.getElementById("result");
+					result.className = "result";
+					var arr = ['恭喜获得张学友亲笔签名CD一张', '恭喜获得李宇春亲笔签名CD一张','恭喜获得张杰亲笔签名CD一张','恭喜获得周杰伦亲笔签名CD一张'];
+					var num = Math.floor(Math.random() * 2);
+					result.innerHTML = arr[num];
+					setTimeout(function() {
+						result.className = "result result-show";
+					}, 1000);
+				}
+			};
+		</script>
+		<script>
+			$('.head_left_icon').click(function(){
+				window.history.back()
+			});
+		</script>
+	</body>
+
+
+</html>

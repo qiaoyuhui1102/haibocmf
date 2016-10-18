@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>全屏直播</title>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body>
+		<div class="screen_img">
+			<img src="../img/1-5@2x.png" class="screen_bj" />
+			<!--头部-->
+			<header class="mui-bar mui-bar-nav" style="background-color:rgba(40,40,40,0.5);box-shadow: none;top: 0;right: 0;left: 0;position: fixed;z-index: 300">
+				<a class="mui-pull-left mui-action-back">
+					<img src="../img/1@2x.png" class="head_left_icon" />
+					<span class="countdown_title">抒情歌手micke巡回演唱</span>
+				</a>
+				<a class="mui-pull-right">
+					<img src="../img/5@2x.png" class="head_right_icon fright" id="fenxiang_icon" />
+					<img src="../img/11@2x.png" class="head_right_icon fright" style="width: 20px; margin-right: 10px"/>&nbsp;&nbsp;&nbsp;&nbsp;
+				</a>
+			<!--	<h1 class="mui-title">-->
+					<span class="screen_center">
+						<img src="../img/9-1@2x.png" class="screen_person"/>
+						<span class="screen_c_txt">14256</span>
+					</span>
+				<!--</h1>-->
+			</header>
+			<!--视频层-->
+			<div style="position: absolute;width:100%;/*height: 200px;*/top: 0;left: 0;background-color: #000;z-index: 0;">
+				<video src="http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8" width="100%" height="200px" autoplay="autoplay" style="background-color: #000;display: none;"></video>
+			</div>
+			<!--画布层-->
+			<div style="position: absolute;width: 100%;height: 100%;z-index: 200;top: 0;left:0;">
+				<canvas id="Danmaku" style="z-index: 200;" id="Danmaku" height="200"></canvas>
+			</div>
+			<!--砸砖层-->
+			<div class="zazhuan" style="z-index: 100;position: absolute;top: 50px;bottom: 52px;left: 0;right: 0">
+				<div class="zong" style="z-index: 100;position: absolute;height: 100%;"></div>
+			</div>
+			<!--底部-->
+			<div class="screen_bottom" id="screen_bottom" style="z-index: 300;">
+				<ul  style="float: left; width: 13%;">
+					<li class="screen_z"><img src="../img/12@2x.png" class="screen_za" id="f_smashed_screen" /></li>
+					<li class="screen_s"><img src="../img/13@2x.png" class="screen_shang" id="f_reward_screen" /></li>
+				</ul>
+				<ul style="float:right; width: 76%;">
+					<li class="screen_se"><input type="button" value="发送" class="screen_send" /></li>
+					<li class="screen_t">
+						<input type="text" class="screen_text" placeholder="在这里输入弹幕内容" onclick="inputKuang2()" />
+						<img src="../img/32@2x.png" class="screen_tan" />
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--弹出框——结束-->
+		<div class="model_end" style="display:none;">
+			<div class="page_opacity3"></div>
+			<div class="full_end">
+				<ul>
+					<li class="full_title">抒情歌手micke巡回演唱</li>
+					<li class="full_zbend">直播结束</li>
+					<li class="full_return"><input type="button" value="返回" /></li>
+				</ul>
+			</div>
+		</div>
+
+		<!--分享-->
+		<div class="fenxiang" id="fenxiang" style="display: none;">
+			<div class="page_opacity2"></div>
+			<div class="fenxiang_con">分享</div>
+			<table class="fenxiang_table">
+				<tr>
+					<td>
+						<img src="../img/w@2x.png" />
+						<span>微信</span>
+					</td>
+					<td>
+						<img src="../img/q@2x.png" />
+						<span>朋友圈</span>
+					</td>
+					<td>
+						<img src="../img/qq@2x.png" />
+						<span>QQ</span>
+					</td>
+					<td>
+						<img src="../img/qk@2x.png" />
+						<span>QQ空间</span>
+					</td>
+					<td>
+						<img src="../img/wb@2x.png" />
+						<span>新浪微博</span>
+					</td>
+				</tr>
+			</table>
+			<div class="fenxiang_quxiao" id="fenxiang_cancel">
+				<a>取消</a>
+			</div>
+		</div>
+		<!--结束是弹出框-->
+		<div class="end_kuang" id="end_kuang" style="display: none;">
+			<div class="page_opacity2" style="z-index:1; background-color:rgba(0,0,0,0.7);"></div>
+			<div class="model_con2">
+				<ul>
+					<li class="end_title">抒情歌手micke巡回演唱</li>
+					<li class="end_end">直播结束</li>
+					<li class="end_btn"><input type="button" value="返回" id="end_return" /></li>
+				</ul>
+			</div>
+		</div>
+		<!--赏-->
+		<div class="shang_qp shang_div" style="display:none;">
+			<div class="q_s_screen">
+				<ul>
+					<li class="sh_qp_img"><img src="../img/tou05@2x.png" /></li>
+					<li class="sh_qp_text">
+						<span class="sh_qp_name">micholas</span>
+						<span class="sh_qp_money"><b>赏：￥88.88 </b>消除88块砖</span>
+					</li>
+				</ul>
+				<div class="shang_qp_img"><img src="../img/dashang2@2x.png" /></div>
+			</div>
+		</div>
+		<!--砸-->
+		<div class="shang_qp zhuan_div" style="display: none;">
+			<div class="q_s_screen">
+				<ul>
+					<li class="sh_qp_img"><img src="../img/tou05@2x.png" /></li>
+					<li class="sh_qp_text">
+						<span class="sh_qp_name" style="position: relative; top:-4px">micholas</span>
+						<span class="sh_qp_za">砸了砖</span>
+					</li>
+				</ul>
+				<div class="shang_qp_img"><img src="../img/zazhuan2@2x.png" width="70px" height="62px" style="top:-25px" /></div>
+			</div>
+		</div>
+		<!--点击的输入框-->
+		<div class="fs_div" id="fs_div" style="display: none;z-index: 300;">
+			<ul>
+				<li class="screen_t" style="width: 88%; float: left;">
+					<input id="danmaku_input" type="text" class="screen_text" placeholder="在这里输入弹幕内容" style="margin-left: 0%;" />
+					<img src="../img/32@2x.png" class="screen_tan" style=" left: 1%;" />
+				</li>
+				<li class="screen_se"><input id="send_btn" type="button" value="发送" class="screen_send" style="top:0px" /></li>
+			</ul>
+		</div>
+	</body>
+	<script src="../js/live_radio/zhuan.js"></script>
+	<script src="../js/live_radio/danmaku.js"></script>
+	<script type="text/javascript" src="../js/live_radio/full_screen_live.js" ></script>
+</html>

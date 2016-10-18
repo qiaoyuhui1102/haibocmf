@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>绑定手机号</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js" ></script>
+		<script type="text/javascript" src="../js/personal/phone.js" ></script>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body style="background-color: #f5f5f5;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<h1 class="mui-title" style="color: #FFFFFF;">绑定手机号</h1>
+		</header>
+		<div class="mui-content" style="background-color: #f5f5f5;">
+			<div class="phone_con">
+				<ul>
+					<li class="phone_text"><input type="tel" placeholder="手机号" class="text_phone" /></li>
+					<li class="phone_text">
+						<input type="tel" placeholder="验证码" class="text_phone" />
+						<span class="phone_hqyz">
+							<input type="button" value="获取验证" class="text_yqyz"/>
+						</span>
+					</li>
+					<li class="phone_sure" id="phone_success"><input type="button" value="确定" /></li>
+					<li class="phone_tit">我已阅读并同意<span style="color:#e23f75 ;">《服务声明》</span></li>
+				</ul>
+			</div>
+		</div>
+		<!--提示信息-->
+		<div class="phone_cw" style="display: none;">
+			<div class="fenxiang_success" style="display:block ; left: inherit;">
+				<div class="page_opacity2"></div>
+				<ul>
+					<li class="fx_s_img"><img src="../img/38-1@2x.png" /></li>
+					<li>验证码错误</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>设置</title>
+		<!--<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<script src="../js/mui.min.js"></script>-->
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="../js/personal/set.js" ></script>
+		<link rel="stylesheet" href="../css/public-test.css" type="text/css" />
+		<script src="../js/zepto.min.js"></script>
+	</head>
+
+	<body style="background-color: #efefef;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+			</a>
+			<a class="mui-pull-right" style="color: #FFFFFF; line-height: 44px; font-size: 14px;float: right;">
+				保存
+			</a>
+			<h1 class="mui-title" style="color: #FFFFFF;">设置</h1>
+		</header>
+		<div class="mui-content" style="background-color: #efefef;">
+			<div class="set_list">
+				<table class="table_set m_c">
+					<tr id="touxiang">
+						<td style="height: 60px;" class="table_set_name">头像</td>
+						<td style="height: 60px;"><img src="../img/tou222@2x.png" width="50px" height="50px" style=" position: relative;top: 10px;" /></td>
+						<td style="height: 60px;" class="table_set_sj"><img src="../img/37@2x.png" class="set_xyy" /></td>
+					</tr>
+					<tr>
+						<td class="table_set_name">昵称</td>
+						<td colspan="2"><input type="text" value="分你半包辣条" class="set_name_text"/></td>
+							
+					</tr>
+					<tr id="set_sex">
+						<td class="table_set_name">性别</td>
+						<td>男</td>
+						<td class="table_set_sj"><img src="../img/37@2x.png" class="set_xyy" /></td>
+					</tr>
+					<tr id="phone">
+						<td class="table_set_name">绑定电话</td>
+						<td>1822245660</td>
+						<td class="table_set_sj"><img src="../img/37@2x.png" class="set_xyy" /></td>
+					</tr>
+				</table>
+			</div>
+			<div class="set_fk">
+				<table class="table_set m_c">
+					<tr id="feedback">
+						<td class="table_set_name">反馈</td>
+						<td class="table_set_sj"><img src="../img/37@2x.png" class="set_xyy" /></td>
+					</tr>
+					<tr>
+						<td class="table_set_name">清除缓存</td>
+						<td class="table_set_sj" style="color: #a5a5a6;">1.3M</td>
+					</tr>
+					<tr>
+						<td class="table_set_name">关于嗨播</td>
+						<td class="table_set_sj"><img src="../img/37@2x.png" class="set_xyy" /></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<!--头像-->
+		<div class="set_head" style="display: none;" id="set_head">
+			<div class="page_opacity2" style="z-index: 0;"></div>
+			<div class="set_head_con">
+				<ul>
+					<li style="border-bottom:1px solid #dcdcdc;">拍照</li>
+					<li>从相册选择</li>
+					<li style="color: #393838; border-top: 5px solid #928f8f;" id="set_head_quxiao">取消</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!--性别-->
+		<div class="set_head" style="display: none;" id="set_sex_model">
+			<div class="page_opacity2" style="z-index: 0;"></div>
+			<div class="set_head_con">
+				<ul>
+					<li style="border-bottom:1px solid #dcdcdc;">男</li>
+					<li>女</li>
+					<li style="color: #393838; border-top: 5px solid #928f8f;"id="set_sex_quxiao">取消</li>
+				</ul>
+			</div>
+		</div>
+		<script>
+			$('.head_left_icon').click(function(){
+				window.history.back()
+			});
+		</script>
+
+	</body>
+
+
+
+</html>

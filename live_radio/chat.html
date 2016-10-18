@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<title>直播半屏——聊天</title>
+		<link href="../css/mui.min.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/public.css" type="text/css" />
+		<!--media="all and (orientation:landscape)"-->
+		<!--<link rel="stylesheet" href="../css/public.css" type="text/css" media="all and (orientation:portrait)"/>-->
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+		<script src="https://cdn.wilddog.com/js/client/current/wilddog.js"></script>
+		<script src="https://cdn.wilddog.com/js/vendor/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="../js/live_radio/chat.js"></script>
+
+	</head>
+
+	<body style="background-color: #EFEFF4;">
+		<header style="position: fixed; top: 0px;left: 15px; right: 15px; z-index: 106;">
+			<a class="mui-pull-left mui-action-back">
+				<img src="../img/1@2x.png" class="head_left_icon" />
+				<span class="countdown_title">抒情歌手micke巡回演唱</span>
+			</a>
+			<a class="mui-pull-right" id="fenxiang_icon">
+				<img src="../img/5@2x.png" class="head_right_icon" />
+			</a>
+		</header>
+		<div class="countdown_top" style="z-index: 1;">
+			<img src="../img/1-3@2x.png" />
+		</div>
+		<!--全屏按钮和人数-->
+		<div class="count_head_bottom">
+			<ul>
+				<li class="count_person_bj">
+					<span class="c_person_icon"><img src="../img/9-1@2x.png"/></span>
+					<span style="line-height: 20px;">&nbsp;7868</span>
+				</li>
+				<li class="count_qp_bj" id="c_full_screen_live">
+					<img src="../img/8@2x.png" class="quanbing_icon" />
+				</li>
+			</ul>
+		</div>
+		<!--砸砖-->
+		<script type="text/javascript" src="../js/live_radio/jquery.js"></script>
+		<div class="zazhuan">
+			<div class="zong"></div>
+			<div class="za_btn"><button type="button" class="remove">移除</button>
+			<button type="button" class="buttonObj">fix点击</button></div>
+		</div>
+		<script type="text/javascript" src="../js/live_radio/zhuan.js"></script>
+		<div id="tab">
+			<div class="countdown_tab" id="countdown_tab">
+				<ul>
+					<li class="countdown_hover">聊天<span class="countdown_line"></span></li>
+					<li>排行</li>
+				</ul>
+			</div>
+			<div class="countdown_con ">
+				<div class="count_online">
+					<div class="count_online_r">
+						<img src="../img/tou2@2x.png" class="count_touxiang" />
+						<ul class="count_title">
+							<li class="count_name_date"><span style="color:#727171;">2016年9月7日 09:18</span>&nbsp; zhangx</li>
+							<li class="count_text">一直很喜欢他的歌曲
+								<div class="rightdirection"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="count_online_l">
+						<img src="../img/tou1-@2x.png" class="count_touxiang2" />
+						<ul class="count_title2">
+							<li class="count_name_date2">zhangx&nbsp;<span style="color:#727171;">2016年9月7日 09:18</span></li>
+							<li class="count_text2">唱的真是太棒了真是不错
+							</li>
+							<div class="leftdirection"></div>
+						</ul>
+					</div>
+					<div class="count_online_l">
+						<img src="../img/tou1-@2x.png" class="count_touxiang2" />
+						<ul class="count_title2">
+							<li class="count_name_date2">zhangx&nbsp;<span style="color:#727171;">2016年9月7日 09:18</span></li>
+							<li class="count_text2">唱的真是太棒了真是不错</li>
+							<div class="leftdirection"></div>
+						</ul>
+					</div>
+					<div class="count_online_l">
+						<img src="../img/tou1-@2x.png" class="count_touxiang2" />
+						<ul class="count_title2">
+							<li class="count_name_date2">zhangx&nbsp;<span style="color:#727171;">2016年9月7日 09:18</span></li>
+							<li class="count_text2">唱的真是太棒了真是不错</li>
+							<div class="leftdirection"></div>
+						</ul>
+					</div>
+					<div class="count_online_r">
+						<img src="../img/tou2@2x.png" class="count_touxiang" />
+						<ul class="count_title">
+							<li class="count_name_date"><span style="color:#727171;">2016年9月7日 09:18</span>&nbsp; zhangx</li>
+							<li class="count_text" style="width: 155px;">一直很喜欢他的歌曲
+								<div class="rightdirection"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="count_online_r">
+						<img src="../img/tou2@2x.png" class="count_touxiang" />
+						<ul class="count_title">
+							<li class="count_name_date"><span style="color:#727171;">2016年9月7日 09:18</span>&nbsp; zhangx</li>
+							<li class="count_text" style="width: 155px;">一直很喜欢他的歌曲
+								<div class="rightdirection"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="count_bottom">
+					<ul class="m_c">
+						<li class="m_r"><img src="../img/6@2x.png" class="count_zan" id="c_smashed_bricks" /></li>
+						<li class="m_r"><img src="../img/7@2x.png" class="count_money" id="c_reward" /></li>
+						<li style="width: 60%;"><input type="text" placeholder="在这里输入聊天内容" class="input_text" onclick="inputKuang()" /></li>
+						<li class="count_send">发送</li>
+					</ul>
+				</div>
+				<!--点击输入框-->
+				<div class="cc_input" style="display:none;" id="cc_input">
+					<ul>
+						<li class="cc_sr_input"><input type="text" placeholder="在这里输入聊天内容" class="cc_input_text" /></li>
+						<li class="cc_input_send" id="btn_send">
+							<a href="javascript:;">发送</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="countdown_con" style="display: none;">
+				<table class="countdown_table">
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai1@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1980.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai2@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1660.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<img src="../img/pai3@2x.png" class="count_ph_img" />
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥1880.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">4</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥380.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">5</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥980.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">6</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥720.00</span></td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<sapn class="ct_number">7</sapn>
+						</td>
+						<td>
+							<img src="../img/tou2@2x.png" class="count_ph_touxiang" />
+							<span class="ct_name">JICK JOHN</span>
+						</td>
+						<td><span class="ct_money">￥520.00</span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--分享-->
+		<div class="fenxiang" id="fenxiang" style="display: none;">
+			<div class="page_opacity2"></div>
+			<div class="fenxiang_con">分享</div>
+			<table class="fenxiang_table">
+				<tr>
+					<td>
+						<img src="../img/w@2x.png" />
+						<span>微信</span>
+					</td>
+					<td>
+						<img src="../img/q@2x.png" />
+						<span>朋友圈</span>
+					</td>
+					<td>
+						<img src="../img/qq@2x.png" />
+						<span>QQ</span>
+					</td>
+					<td>
+						<img src="../img/qk@2x.png" />
+						<span>QQ空间</span>
+					</td>
+					<td>
+						<img src="../img/wb@2x.png" />
+						<span>新浪微博</span>
+					</td>
+				</tr>
+			</table>
+			<div class="fenxiang_quxiao" id="fenxiang_cancel">
+				<a>取消</a>
+			</div>
+		</div>
+		<!--分享成功-->
+		<div class="fenxiang_success" style="display: none;">
+			<!--<div class="page_opacity2"></div>-->
+			<ul>
+				<li class="fx_s_img"><img src="../img/38@2x.png" /></li>
+				<li>分享成功</li>
+			</ul>
+		</div>
+		<!--分享失败-->
+		<div class="fenxiang_success" style="display: none;">
+			<!--<div class="page_opacity2"></div>-->
+			<ul>
+				<li class="fx_s_img"><img src="../img/38-1@2x.png" /></li>
+				<li>分享失败</li>
+			</ul>
+		</div>
+		<!--赏效果-->
+		<div class="shang_div" style="display: none;">
+			<div class="page_opacity2"></div>
+			<div class="shang_img">
+				<img src="../img/dashang@2x.png" />
+			</div>
+			<div class="shang_bj">
+				<div class="shang_person">
+					<ul style="position: absolute;">
+						<li class="shang_touxiang">
+							<img src="../img/tou2@2x.png" class="shang_tx" />
+						</li>
+						<li class="shang_name">JUCY</li>
+						<li class="shang_money">
+							<span class="sm_money">赏￥8.00</span>
+							<span>消8块砖</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--砸砖效果-->
+		<div class="shang_div" style="display:none ;">
+			<div class="page_opacity2"></div>
+			<div class="shang_img2">
+				<img src="../img/zazhuan@2x.png" width="250px" height="214px" />
+			</div>
+			<div class="shang_bj">
+				<div class="shang_person">
+					<ul style="position: absolute;">
+						<li class="shang_touxiang" style="top: 8px;">
+							<img src="../img/tou2@2x.png" class="shang_tx" />
+						</li>
+						<li class="shang_name" style="top:-5px">JUCY</li>
+						<li class="shang_money">
+							<span class="zalezhuan">砸了砖</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>
